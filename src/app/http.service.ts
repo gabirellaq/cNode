@@ -28,6 +28,26 @@ export class HttpService {
       })
   }
 
+  //用户信息
+  getUser(username) {
+    return axios.get(`user/${username}`)
+      .then(res=>{
+        return Promise.resolve(res.data);
+      }).catch(err=>{
+        return Promise.reject(err);
+      })
+  }
+
+  //用户收藏的主题
+  getTopicCollect(username){
+    return axios.get(`topic_collect/${username}`)
+      .then(res=>{
+        return Promise.resolve(res.data);
+      }).catch(err=>{
+        return Promise.reject(err);
+      });
+  }
+
 
 
 }

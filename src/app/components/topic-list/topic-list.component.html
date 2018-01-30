@@ -1,10 +1,12 @@
 <ul class="topicul" *ngIf="topics">
   <li *ngFor="let x of topics">
     <span class="avator" title="{{x.author.loginname}}">
-      <img src="{{x.author.avatar_url}}" alt="">
+      <a routerLink="/user/{{x.author.loginname}}">
+        <img src="{{x.author.avatar_url}}" alt="">
+      </a>
     </span>
     <span class="count">
-      {{x.reply_count}}/{{x.visit_count}}
+      {{x.reply_count || 0}}/{{x.visit_count || 0}}
     </span>
     <span class="tag highlight" *ngIf="x.top === true">置顶</span>
     <span class="tag highlight" *ngIf="x.top ===false && x.good === true">精华</span>
@@ -17,7 +19,7 @@
       </a>
     </span>
     <span class="time">
-      {{x.last_reply_at | time}} 天前
+      {{x.last_reply_at | time}}
     </span>
   </li>
 </ul>

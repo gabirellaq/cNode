@@ -10,7 +10,11 @@
     </div>
     <div class="headerDes">
       <span>发布于：{{topicDetail.create_at | time}}天前</span>
-      <span *ngIf="topicDetail.author">作者：{{topicDetail.author.loginname}}</span>
+      <span class="author" *ngIf="topicDetail.author">作者：
+          <a routerLink="/user/{{topicDetail.author.loginname}}">
+            {{topicDetail.author.loginname}}
+          </a>
+      </span>
       <span>{{topicDetail.visit_count}}次浏览</span>
       <span>最后一次编辑是{{topicDetail.last_reply_at}}</span>
       <span>来自 {{topicDetail.tab}}</span>

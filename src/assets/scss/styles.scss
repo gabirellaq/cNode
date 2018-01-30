@@ -23,6 +23,11 @@ input {
     outline: 0;
 }
 
+img {
+    border:0;
+    vertical-align: middle;
+}
+
 a {
     color:$blue-color;
     text-decoration: none;
@@ -44,6 +49,7 @@ a {
 .panle-content {
     background: $white-color;
     overflow: hidden;
+    margin-bottom:20px;
     img {
         width: auto;
         max-width: 100%;

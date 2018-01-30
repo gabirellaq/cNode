@@ -12,6 +12,7 @@ import { TopicContentComponent } from './components/topic-content/topic-content.
 import { FilterPipe,TimePipe } from './filter.pipe';
 import { TopicContainerComponent } from './components/topic-container/topic-container.component';
 import { TopicListComponent } from './components/topic-list/topic-list.component';
+import { UserComponent } from './components/user/user.component';
 
 
 
@@ -24,7 +25,8 @@ import { TopicListComponent } from './components/topic-list/topic-list.component
     FilterPipe,
     TimePipe,
     TopicContainerComponent,
-    TopicListComponent
+    TopicListComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

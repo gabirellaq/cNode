@@ -59,9 +59,7 @@ export class TopicContentComponent implements OnInit {
 
   changeTab(e){
     this.tab = e;
-    console.log(this.tab);
     this.topicslist = this.topics[e];
-    console.log(this.topicslist);
   }
 
 }

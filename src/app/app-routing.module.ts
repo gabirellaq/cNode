@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { TopicContentComponent } from './components/topic-content/topic-content.component';
 import { TopicContainerComponent } from './components/topic-container/topic-container.component';
+import { UserComponent } from './components/user/user.component';
 
 const routes:Routes = [
     {
@@ -15,6 +16,9 @@ const routes:Routes = [
     },{
         path:'topicontainer/:id',
         component: TopicContainerComponent
+    },{
+        path:'user/:username',
+        component: UserComponent
     }
 ];
 
