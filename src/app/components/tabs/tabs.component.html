@@ -1,0 +1,7 @@
+<div class="panel panel-header">
+    <ul>
+      <li *ngFor="let x of topicsTab">
+        <a routerLink="/topicontent/{{x.label}}" routerLinkActive="active">{{x.name}}</a>      
+      </li>
+    </ul>
+  </div>

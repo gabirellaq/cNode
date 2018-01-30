@@ -1,0 +1,25 @@
+
+
+$font-size:14px;
+$font-des-size:12px;
+$font-title-size:16px;
+
+$font-color:#666;
+$font-title-color:#333;
+$font-des-color:#999;
+
+$white-color:#fff;
+$black-color:#000;
+$green-color:#80bd01;
+$grey-color:#eee;
+$blue-color:#08c;
+
+$header-bg-color:#444;
+
+$panel-header-bg-color:#f6f6f6;
+
+@mixin textOverflow(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

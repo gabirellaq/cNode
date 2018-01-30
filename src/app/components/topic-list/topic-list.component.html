@@ -1,0 +1,23 @@
+<ul class="topicul" *ngIf="topics">
+  <li *ngFor="let x of topics">
+    <span class="avator" title="{{x.author.loginname}}">
+      <img src="{{x.author.avatar_url}}" alt="">
+    </span>
+    <span class="count">
+      {{x.reply_count}}/{{x.visit_count}}
+    </span>
+    <span class="tag highlight" *ngIf="x.top === true">置顶</span>
+    <span class="tag highlight" *ngIf="x.top ===false && x.good === true">精华</span>
+    <span class="tag" *ngIf="x.top ===false && x.good ===false && x.tab === 'share'">分享</span>
+    <span class="tag" *ngIf="x.top ===false && x.good ===false && x.tab === 'ask'">问答</span>
+    <span class="tag" *ngIf="x.top ===false && x.good ===false && x.tab === 'job'">招聘</span>
+    <span class="title">
+      <a routerLink="/topicontainer/{{x.id}}">
+          {{x.title}}
+      </a>
+    </span>
+    <span class="time">
+      {{x.last_reply_at | time}} 天前
+    </span>
+  </li>
+</ul>

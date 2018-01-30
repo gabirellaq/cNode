@@ -1,0 +1,78 @@
+@import "variables.scss";
+
+body {
+    margin:0;
+    font-size:$font-size;
+    color:$font-color;
+    line-height: 1.47;
+    font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti,sans-serif;
+    background: #e1e1e1;
+}
+
+ul,li,ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body, input, p, textarea {
+    word-break: break-word;
+}
+
+input {
+    outline: 0;
+}
+
+a {
+    color:$blue-color;
+    text-decoration: none;
+    &:hover {
+        color:inherit;
+        text-decoration: underline;
+    }
+}
+
+.panel {
+    margin:0 5px;
+}
+.panel-header {
+    background: $white-color;
+    background: $panel-header-bg-color;
+    padding: 10px;
+    border-radius: 3px 3px 0 0;
+}
+.panle-content {
+    background: $white-color;
+    overflow: hidden;
+    img {
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+.tag {
+    background: $grey-color;
+    color:$font-color;
+    padding:2px 4px;
+    font-size: $font-des-size;
+    border-radius:3px;
+    &.highlight {
+        background: $green-color;
+        color:$white-color;
+    }
+}
+
+.container{
+    width: 90%;
+    min-width: 960px;
+    margin:0 auto;
+    max-width: 1400px;
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+}

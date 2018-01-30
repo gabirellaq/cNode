@@ -1,0 +1,28 @@
+@import "../../../assets/scss/variables.scss";
+
+.topicDetail {
+    .topic_header {
+        padding:20px;
+        border-bottom: 1px solid $grey-color;
+        .topicTitle {
+            font-size:$font-title-size;
+            color:$font-title-color;
+            font-weight:bold;
+        }
+        .headerDes {
+            padding:8px 0;
+            color:$font-des-color;
+            font-size:$font-des-size;
+            span{
+                &:before {
+                    content: "•";
+                    margin-right: 5px;
+                }
+                margin-right: 10px;
+            }
+        }
+    }
+    .topic_content{
+        padding:20px;
+    }
+}
