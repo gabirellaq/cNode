@@ -16,24 +16,25 @@ export class FilterPipe implements PipeTransform {
 })
 export class TimePipe implements PipeTransform {
   transform(value){
-    //if(!value) return value;
-    let eTime = new Date();
-    let sTime = new Date(value);
-    //day
-    let nTime = (eTime.getTime() - sTime.getTime()) / (1000*3600*24);
-    let nnTime;
-    if(nTime > 0 && nTime < 30){
-      nnTime = nTime.toFixed(0) + "天前";
-      if(nTime.toFixed(0) === "0"){
-        nnTime = "今天";
-      }
+    if (!value) return ''
+    var date = new Date(value)
+    var time = new Date().getTime() - date.getTime() // 现在的时间-传入的时间 = 相差的时间（单位 = 毫秒）
+    if (time < 0) {
+      return ''
+    } else if ((time / 1000 < 30)) {
+      return '刚刚'
+    } else if (time / 1000 < 60) {
+      return (time / 1000).toFixed(0) + '秒前'
+    } else if ((time / 60000) < 60) {
+      return (time / 60000).toFixed(0) + '分钟前'
+    } else if ((time / 3600000) < 24) {
+      return (time / 3600000).toFixed(0) + '小时前'
+    } else if ((time / 86400000) < 31) {
+      return (time / 86400000).toFixed(0) + '天前'
+    } else if ((time / 2592000000) < 12) {
+      return (time / 2592000000).toFixed(0) + '月前'
+    } else {
+      return (time / 31536000000).toFixed(0) + '年前'
     }
-    else if( nTime >= 30 && nTime < 365) {
-      nnTime = (nTime / 30).toFixed(0) + "月前";
-    }
-    else if(nTime >= 365){
-      nnTime = (nTime / 365).toFixed(0) + "年前";
-    }
-    return nnTime;
   }
 }
